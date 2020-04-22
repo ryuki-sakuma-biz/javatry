@@ -177,17 +177,14 @@ public class Step02IfForTest extends PlainTestCase {
      */
     public void test_iffor_refactor_foreach_to_forEach() {
         List<String> stageList = prepareStageList();
-        String sea = null;
-        for (String stage : stageList) {
-            if (stage.startsWith("br")) {
-                continue;
+        stageList.forEach(stage -> {
+            if (!stage.startsWith("br")) {
+                if (stage.contains("ga")) {
+                    log(stage);
+                }
             }
-            sea = stage;
-            if (stage.contains("ga")) {
-                break;
-            }
-        }
-        log(sea); // should be same as before-fix
+        });
+
     }
 
     /**
