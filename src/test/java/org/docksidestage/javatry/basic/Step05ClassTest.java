@@ -163,6 +163,15 @@ public class Step05ClassTest extends PlainTestCase {
      */
     public void test_class_moreFix_type() {
         // your confirmation code here
+        switch (ticket.getDisplayPrice()) {
+            case Ticket.ONE_DAY_PRICE :
+                log("ONE DAY TICKET");
+                break;
+            case Ticket.TWO_DAY_PRICE:
+                log("TWO DAY TICKET");
+                break;
+            default:
+        }
     }
 
     // ===================================================================================

@@ -26,6 +26,9 @@ public class Ticket {
     private final int displayPrice;
     private boolean alreadyIn;
 
+    public static final int ONE_DAY_PRICE = 7400;
+    public static final int TWO_DAY_PRICE =  13200;
+
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
