@@ -161,7 +161,7 @@ public class Step05ClassTest extends PlainTestCase {
      * Now you cannot judge ticket type "one-day or two-day?", so add method to judge it. <br>
      * (チケットをもらってもOneDayなのかTwoDayなのか区別が付きません。区別を付けられるメソッドを追加しましょう)
      */
-    public void test_class_moreFix_type() {
+    public void test_class_moreFix_type(Ticket ticket) {
         // your confirmation code here
         switch (ticket.getDisplayPrice()) {
             case Ticket.ONE_DAY_PRICE :
