@@ -17,6 +17,7 @@ package org.docksidestage.javatry.basic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.docksidestage.unit.PlainTestCase;
 
@@ -161,6 +162,10 @@ public class Step02IfForTest extends PlainTestCase {
      */
     public void test_iffor_making() {
         // write if-for here
+        List<String> stageList = prepareStageList().stream()
+                .filter(stage -> stage.contains("a"))
+                .collect(Collectors.toList());
+        stageList.forEach(stage -> log(stage));
     }
 
     // ===================================================================================
