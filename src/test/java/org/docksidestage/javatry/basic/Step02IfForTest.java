@@ -177,6 +177,7 @@ public class Step02IfForTest extends PlainTestCase {
      */
     public void test_iffor_refactor_foreach_to_forEach() {
         List<String> stageList = prepareStageList();
+        // TODO sakuma gaを含むstageが2つ以上あったときでも、以前のコードと結果が同じになるようにしてみましょう (多少無理矢理でもいいので) by jflute (2020/04/22)
         stageList.forEach(stage -> {
             if (!stage.startsWith("br")) {
                 if (stage.contains("ga")) {
