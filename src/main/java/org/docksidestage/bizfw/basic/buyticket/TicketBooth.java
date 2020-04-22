@@ -43,34 +43,27 @@ public class TicketBooth {
     //                                                                          Buy Ticket
     //                                                                          ==========
     public void buyOneDayPassport(int handedMoney) {
-        if (quantity <= 0) {
-            throw new TicketSoldOutException("Sold out");
-        }
-        if (handedMoney < ONE_DAY_PRICE) {
-            throw new TicketShortMoneyException("Short money: " + handedMoney);
-        }
-        --quantity;
-        if (salesProceeds != null) {
-            salesProceeds = salesProceeds + ONE_DAY_PRICE;
-        } else {
-            salesProceeds = ONE_DAY_PRICE;
-        }
+        int change = buyPassport(handedMoney, ONE_DAY_PRICE);
     }
 
     public int buyTwoDayPassport(int handedMoney) {
-        if (quantity <= 0) {
+        return buyPassport(handedMoney, TWO_DAY_PRICE);
+    }
+
+    private int buyPassport(int handedMoney, int passportPrice) {
+        if (quantity < 1) {
             throw new TicketSoldOutException("Sold out");
         }
-        if (handedMoney < TWO_DAY_PRICE) {
+        if (handedMoney < passportPrice) {
             throw new TicketShortMoneyException("Short money: " + handedMoney);
         }
         --quantity;
         if (salesProceeds != null) {
-            salesProceeds = salesProceeds + TWO_DAY_PRICE;
+            salesProceeds += passportPrice;
         } else {
-            salesProceeds = TWO_DAY_PRICE;
+            salesProceeds = passportPrice;
         }
-        return handedMoney - TWO_DAY_PRICE;
+        return handedMoney - passportPrice;
     }
 
     public static class TicketSoldOutException extends RuntimeException {
