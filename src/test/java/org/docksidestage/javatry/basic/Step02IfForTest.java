@@ -193,12 +193,20 @@ public class Step02IfForTest extends PlainTestCase {
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):
-     * 
+     * prepareStageListの要素を文字列の長さ順に直して出力
+     * その後要素の6文字以上の文字列は6文字にして出力
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
     public void test_iffor_yourExercise() {
         // write your code here
+        List<String> stageList = prepareStageList();
+        stageList.sort((a, b) -> a.length() == b.length() ? a.compareTo(b) : a.length() - b.length());
+        log(stageList);
+        stageList = stageList.stream()
+                .map(stage -> stage.substring(0, 6))
+                .collect(Collectors.toList());
+        log(stageList);
     }
 
     // ===================================================================================
