@@ -208,11 +208,20 @@ public class Step01VariableTest extends PlainTestCase {
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):
-     * 
+     * ローカル変数 名前はstr1、型はStringBuilder, 初期値は""
+     * ローカル変数 名前はstr1、型はStringBuilder, 初期値は"abc"
+     * num1にnum2を初期化
+     * num2にappend("def")
+     * num1をlog()で表示したときの結果は？
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
     public void test_variable_yourExercise() {
         // write your code here
+        StringBuilder str1 = new StringBuilder("");
+        StringBuilder str2 = new StringBuilder("abc");
+        str1 = str2;
+        str2.append("def");
+        log(str1.toString()); // your answer? => abcdef
     }
 }
