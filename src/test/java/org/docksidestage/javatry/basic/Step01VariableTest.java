@@ -130,7 +130,7 @@ public class Step01VariableTest extends PlainTestCase {
         String sea = "harbor";
         int land = 415;
         helpMethodArgumentImmutableMethodcall(sea, land);
-        log(sea); // your answer? => 
+        log(sea); // your answer? => bigband|1|null|magician
     }
 
     private void helpMethodArgumentImmutableMethodcall(String sea, int land) {
