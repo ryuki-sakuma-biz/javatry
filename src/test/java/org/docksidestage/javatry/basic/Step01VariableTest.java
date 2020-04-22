@@ -131,7 +131,7 @@ public class Step01VariableTest extends PlainTestCase {
         int land = 415;
         helpMethodArgumentImmutableMethodcall(sea, land);
         // TODO 回答対象の質問間違えたかな？ winkichanwi
-        log(sea); // your answer? => bigband|1|null|magician
+        log(sea); // your answer? => harbor
     }
 
     private void helpMethodArgumentImmutableMethodcall(String sea, int land) {
@@ -193,7 +193,7 @@ public class Step01VariableTest extends PlainTestCase {
      * </pre>
      */
     // NOTE piariはパッケージでさらに他のクラスから呼ばなければアクセス修飾子を考えて追加するの検討してみてください winkichanwi
-    int piari;
+    private int piari;
     public void test_variable_writing() {
         // define variables here
         String sea = "mystic";
