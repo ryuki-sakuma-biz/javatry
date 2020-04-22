@@ -168,7 +168,9 @@ public class Step04MethodTest extends PlainTestCase {
         return str.replace("C", "B");
     }
 
+    // TODO sakuma 引数の変数名に意味を付けているのはGoodですね！ただ... baseStr の方が Prefix って意味合いで合ってます？ by jflute (2020/04/22)
     private String addPrefix(String baseStr, String addingStr) {
+        // TODO sakuma 細かいけど、セミコロンじゃなくてコロンです by jflute (2020/04/22)
         return baseStr + ";" + addingStr;
     }
 
