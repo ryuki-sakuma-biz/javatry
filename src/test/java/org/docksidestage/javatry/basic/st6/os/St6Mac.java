@@ -20,13 +20,17 @@ package org.docksidestage.javatry.basic.st6.os;
  */
 public class St6Mac extends St6OperationSystem {
 
-    public St6Mac (String loginId) { super(loginId); }
+    public St6Mac(String loginId) {
+        super(loginId);
+    }
 
+    // TODO 細かいけど @Override を明示的につけた方がわかりやすいです。 by subaru (2020/04/23)
+    // 他の具象クラスも同様です。
     public String getFileSeparator() {
         return "/";
     }
 
-    public String  getUserDirectory() {
-        return "/Users/" +  super.loginId;
+    public String getUserDirectory() {
+        return "/Users/" + super.loginId;
     }
 }

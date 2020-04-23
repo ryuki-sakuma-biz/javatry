@@ -20,18 +20,18 @@ import org.docksidestage.bizfw.basic.buyticket.Ticket;
 import org.docksidestage.bizfw.basic.buyticket.TicketBooth;
 import org.docksidestage.bizfw.basic.objanimal.Animal;
 import org.docksidestage.bizfw.basic.objanimal.BarkedSound;
-import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Cat;
-import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Dog;
-import org.docksidestage.bizfw.basic.objanimal.notrunner.Zombie;
 import org.docksidestage.bizfw.basic.objanimal.loud.AlarmClock;
 import org.docksidestage.bizfw.basic.objanimal.loud.Loudable;
+import org.docksidestage.bizfw.basic.objanimal.notrunner.Zombie;
 import org.docksidestage.bizfw.basic.objanimal.runner.FastRunner;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Cat;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Dog;
 import org.docksidestage.javatry.basic.st6.dbms.St6MySql;
 import org.docksidestage.javatry.basic.st6.dbms.St6PostgreSql;
 import org.docksidestage.javatry.basic.st6.os.St6Mac;
+import org.docksidestage.javatry.basic.st6.os.St6OldWindows;
 import org.docksidestage.javatry.basic.st6.os.St6OperationSystem;
 import org.docksidestage.javatry.basic.st6.os.St6Windows;
-import org.docksidestage.javatry.basic.st6.os.St6OldWindows;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
@@ -140,7 +140,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         // _/_/_/_/_/_/_/_/_/_/
         //Ticket ticket = booth.buyOneDayPassport(10000);
         booth.buyOneDayPassport(10000); // as temporary, remove if you finished steo05
-//        Ticket ticket = new Ticket(7400); // also here
+        //        Ticket ticket = new Ticket(7400); // also here
         Ticket ticket = new OneDayPassport(7400);
         // *buyOneDayPassport() has this process:
         //if (quantity <= 0) {
@@ -175,6 +175,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         // [final process]
         //
         saveBuyingHistory(booth, ticket);
+        // TODO sakuma せっかくなので test_objectOriented_aboutObject_againstObject メソッドと比べて何が違い、どのようなメリットがあるかなども考察してみましょう！ by subaru (2020/04/23)
         /*
         * オブジェクトとはクラスを元にインスタンス化されたもの
         * 例えば、以下のプラグラムがあった時に
@@ -268,6 +269,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         log(land); // your answer? => 7
     }
 
+    // TODO sakuma ここの答え間違ってないかな？ by subaru (2020/04/23)
+    // おそらくリファクタリングの中で、答えが変わってしまったのかな、何が原因か探ってみましょう。
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_objectOriented_polymorphism_5rd_overrideWithSuper() {
         Animal animal = new Cat();
@@ -278,6 +281,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         log(land); // your answer? => 5
     }
 
+    // TODO sakuma ここも答え間違ってるね by subaru (2020/04/23)
+    // 上と同様です。
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_objectOriented_polymorphism_6th_overriddenWithoutSuper() {
         Animal animal = new Zombie();
@@ -332,6 +337,7 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     // ===================================================================================
     //                                                                 Polymorphism Making
     //                                                                 ===================
+    // TODO sakuma これは問題を読み間違えているね。既存ではなく自分でクラスを作ってみましょう。 by subaru (2020/04/23)
     /**
      * Make concrete class of Animal, which is not FastRunner, in "objanimal" package. (implementation is as you like) <br>
      * (FastRunnerではないAnimalクラスのコンクリートクラスをobjanimalパッケージに作成しましょう (実装はお好きなように))
@@ -346,6 +352,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         log(land);
     }
 
+    // TODO sakuma これも問題を読み間違えているね、ここでやることは interface を作成することです by subaru (2020/04/23)
+    // 確認のコードとしては、それを実際に実装した Animal を新しく作って予想通りの挙動になっているかを確認すると良いです。
     /**
      * Make interface implemented by part of Animal concrete class in new package under "objanimal" package. (implementation is as you like) <br>
      * (Animalクラスの一部のコンクリートクラスだけがimplementsするインターフェースをobjanimal配下の新しいパッケージに作成しましょう (実装はお好きなように))
@@ -370,6 +378,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
     // ===================================================================================
     //                                                                           Challenge
     //                                                                           =========
+    // TODO sakuma mysql と postgresql で想定している出力結果になっていないので確認してみましょう。 by subaru (2020/04/23)
+    //
     /**
      * Extract St6MySql, St6PostgreSql (basic.st6.dbms)'s process to abstract class (as super class and sub-class) <br>
      * (St6MySql, St6PostgreSql (basic.st6.dbms) から抽象クラスを抽出してみましょう (スーパークラスとサブクラスの関係に))
@@ -389,6 +399,8 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
      */
     public void test_objectOriented_writing_specialization_extractToConcrete() {
         // your confirmation code here
+        // TODO [発展] St6Windows と 6OldWindows はさらに親クラスなどを使って共通化できるでしょうか？また今回においてはやるべきでしょうか？ by subaru (2020/04/23)
+        // 完全に発展問題なので時間がある時に考える、または実装してみてください。
         St6OperationSystem mac = new St6Mac("ryuki");
         log(mac.buildUserResourcePath("Hobby"));
         St6OperationSystem windows = new St6Windows("ryuki");

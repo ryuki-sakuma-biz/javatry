@@ -30,6 +30,9 @@ public class BarkingProcess {
         this.animal = animal;
     }
 
+    // TODO Animal にも breathIn メソッドが残っているので重複しています。 by subaru (2020/04/23)
+    // リファクタなので、そうならないようにうまく改善してみましょう。
+    // prepareAbdominalMuscle, doBark, downHitPoint メソッドなどについても同様です。
     protected void breatheIn() {
         logger.debug("...Breathing in");
         downHitPoint();
@@ -41,7 +44,8 @@ public class BarkingProcess {
     }
 
     public BarkedSound doBark() {
-        downHitPoint();;
+        downHitPoint();
+        ;
         return new BarkedSound(animal.getBarkWord());
     }
 
