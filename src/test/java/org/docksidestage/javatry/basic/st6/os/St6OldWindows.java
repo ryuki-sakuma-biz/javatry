@@ -18,19 +18,14 @@ package org.docksidestage.javatry.basic.st6.os;
 /**
  * @author ryuki sakuma
  */
+public class St6OldWindows extends St6OperationSystem {
+    public St6OldWindows (String loginId) { super(loginId); }
 
-public abstract class St6OperationSystem {
-    protected final String loginId;
-
-    public St6OperationSystem(String loginId) { this.loginId = loginId; }
-
-    public String buildUserResourcePath(String relativePath) {
-        String fileSeparator = getFileSeparator();
-        String userDirectory = getUserDirectory();
-        String resourcePath = userDirectory + fileSeparator + relativePath;
-        return resourcePath.replace("/", fileSeparator);
+    public String getFileSeparator() {
+        return "\\";
     }
 
-    public abstract String getFileSeparator();
-    public abstract String  getUserDirectory();
+    public String  getUserDirectory() {
+        return "/Documents and Settigs/" + loginId;
+    }
 }
