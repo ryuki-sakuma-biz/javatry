@@ -18,42 +18,9 @@ package org.docksidestage.bizfw.basic.buyticket;
 /**
  * @author jflute
  */
-public class Ticket {
 
-    // ===================================================================================
-    //                                                                           Attribute
-    //                                                                           =========
-    private final int displayPrice;
-    private boolean alreadyIn;
-
-    public static final int ONE_DAY_PRICE = 7400;
-    public static final int TWO_DAY_PRICE =  13200;
-
-    // ===================================================================================
-    //                                                                         Constructor
-    //                                                                         ===========
-    public Ticket(int displayPrice) {
-        this.displayPrice = displayPrice;
-    }
-
-    // ===================================================================================
-    //                                                                             In Park
-    //                                                                             =======
-    public void doInPark() {
-        if (alreadyIn) {
-            throw new IllegalStateException("Already in park by this ticket: displayedPrice=" + displayPrice);
-        }
-        alreadyIn = true;
-    }
-
-    // ===================================================================================
-    //                                                                            Accessor
-    //                                                                            ========
-    public int getDisplayPrice() {
-        return displayPrice;
-    }
-
-    public boolean isAlreadyIn() {
-        return alreadyIn;
-    }
+public interface Ticket {
+    void doInPark();
+    int getDisplayPrice();
+    boolean isAlreadyIn();
 }

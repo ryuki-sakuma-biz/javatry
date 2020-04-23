@@ -154,7 +154,7 @@ public class Step05ClassTest extends PlainTestCase {
         TicketBuyResult twoDayPassportResult = booth.buyTwoDayPassport(handedMoney);
         Ticket twoDayPassport = twoDayPassportResult.getTicket();
         int change = twoDayPassportResult.getChange();
-        log(twoDayPassport.getDisplayPrice() + change); // should be same as money
+        log("display price : " + twoDayPassport.getDisplayPrice()+ " change:" + change); // should be same as money
     }
 
     /**
@@ -164,13 +164,13 @@ public class Step05ClassTest extends PlainTestCase {
     public void test_class_moreFix_type(Ticket ticket) {
         // your confirmation code here
         switch (ticket.getDisplayPrice()) {
-            case Ticket.ONE_DAY_PRICE :
-                log("ONE DAY TICKET");
-                break;
-            case Ticket.TWO_DAY_PRICE:
-                log("TWO DAY TICKET");
-                break;
-            default:
+        case TicketBooth.ONE_DAY_PRICE:
+            log("ONE DAY TICKET");
+            break;
+        case TicketBooth.TWO_DAY_PRICE:
+            log("TWO DAY TICKET");
+            break;
+        default:
         }
     }
 
@@ -195,6 +195,9 @@ public class Step05ClassTest extends PlainTestCase {
      */
     public void test_class_moreFix_useInterface() {
         // your confirmation code here
+        test_class_letsFix_ticketQuantityReduction();
+        test_class_letsFix_salesProceedsIncrease();
+        test_class_moreFix_return_whole();
     }
 
     /**
