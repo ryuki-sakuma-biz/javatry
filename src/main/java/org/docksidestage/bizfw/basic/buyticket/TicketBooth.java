@@ -15,6 +15,7 @@
  */
 package org.docksidestage.bizfw.basic.buyticket;
 
+// TODO sakuma javadocにauthorをお願いしますー by jflute (2020/04/23)
 /**
  * @author jflute
  */
@@ -25,6 +26,7 @@ public class TicketBooth {
     //                                                                          ==========
     private static final int MAX_QUANTITY = 10;
     public static final int ONE_DAY_PRICE = 7400; // when 2019/06/15
+    // TODO sakuma 細かいけど、空白が多い？？？ by jflute (2020/04/23)
     public static final int TWO_DAY_PRICE =  13200;
     public static final int FOUR_DAY_PRICE =  22400;
 
@@ -43,6 +45,7 @@ public class TicketBooth {
     // ===================================================================================
     //                                                                          Buy Ticket
     //                                                                          ==========
+    // TODO sakuma このコメントアウトはなんでしょう？ (残すコメントアウトにはコメントを) by jflute (2020/04/23)
 //    public void buyOneDayPassport(int handedMoney) {
 //        int change = buyPassport(handedMoney, ONE_DAY_PRICE);
 //    }
@@ -59,6 +62,8 @@ public class TicketBooth {
         return new TicketBuyResult(buyPassport(handedMoney, FOUR_DAY_PRICE), new FourDayPassport(FOUR_DAY_PRICE));
     }
 
+    // TODO sakuma privateメソッドの方は、doBuy というように名前を変える習慣があります。(doじゃないときもあるけど) by jflute (2020/04/23)
+    // publicのbuyとprivateのbuyでメソッド補完で紛らわしかったりするってのもあるし、「実処理だよ」って意味合いで doBuy とか。
     private int buyPassport(int handedMoney, int passportPrice) {
         if (quantity < 1) {
             throw new TicketSoldOutException("Sold out");
