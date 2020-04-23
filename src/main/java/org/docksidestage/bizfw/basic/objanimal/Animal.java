@@ -22,6 +22,7 @@ import org.slf4j.LoggerFactory;
 /**
  * The object for animal(動物).
  * @author jflute
+ * @author ryuki sakuma
  */
 public abstract class Animal implements Loudable {
 
@@ -50,10 +51,10 @@ public abstract class Animal implements Loudable {
     //                                                                               Bark
     //                                                                              ======
     public BarkedSound bark() {
-        breatheIn();
-        prepareAbdominalMuscle();
-        String barkWord = getBarkWord();
-        BarkedSound barkedSound = doBark(barkWord);
+        BarkingProcess barkingProcess = new BarkingProcess(this);
+        barkingProcess.breatheIn();
+        barkingProcess.prepareAbdominalMuscle();
+        BarkedSound barkedSound = barkingProcess.doBark();
         return barkedSound;
     }
 
