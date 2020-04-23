@@ -164,7 +164,7 @@ public class Step07ExceptionTest extends PlainTestCase {
             // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
             // What happens? Write situation and cause here. (何が起きた？状況と原因をここに書いてみましょう)
             // - - - - - - - - - -
-            //
+            // buSupercarから遡ってSupercarClient → SupercarDeale → SupercarManufacturer → SupercarSteeringWheelManufacturer → SpecialScrewManufacturerのthrow new SpecialScrewCannotMakeBySpecException(msg)で例外処理を発生させている。
             //
             //
             // _/_/_/_/_/_/_/_/_/_/
