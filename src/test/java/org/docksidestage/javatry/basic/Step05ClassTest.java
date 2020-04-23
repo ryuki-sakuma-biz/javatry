@@ -220,5 +220,18 @@ public class Step05ClassTest extends PlainTestCase {
      */
     public void test_class_moreFix_yourRefactoring() {
         // write confirmation code here
+        int handMoney = 50000;
+        TicketBooth booth = new TicketBooth();
+        Ticket oneDayPassport = booth.buyOneDayPassport(handMoney);
+        handMoney -= oneDayPassport.getDisplayPrice();
+        log("hand money : " + handMoney + ", ticket class : " + oneDayPassport.getClass().getName());
+        TicketBuyResult ticketBuyResultOfTwoDayPassport = booth.buyTwoDayPassport(handMoney);
+        Ticket twoDayPassport = ticketBuyResultOfTwoDayPassport.getTicket();
+        handMoney = ticketBuyResultOfTwoDayPassport.getChange();
+        log("hand money : " + handMoney + ", ticket class : " + twoDayPassport.getClass().getName());
+        TicketBuyResult ticketBuyResultOfFourDayPassport = booth.buyFourDayPassport(handMoney);
+        Ticket fourDayPassport = ticketBuyResultOfFourDayPassport.getTicket();
+        handMoney = ticketBuyResultOfFourDayPassport.getChange();
+        log("hand money : " + handMoney + ", ticket class : " + fourDayPassport.getClass().getName());
     }
 }
