@@ -169,6 +169,27 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
         // [final process]
         //
         saveBuyingHistory(booth, ticket);
+        /*
+        * オブジェクトとはクラスを元にインスタンス化されたもの
+        * 例えば、以下のプラグラムがあった時に
+            ```
+            public class Human {
+                private final int height;
+                private final int weight;
+                public Human(int height, int weight) {
+                    this.height = height;
+                    this.weight = weight;
+                }
+                public getHeight() { return height;)
+                public getWeight() { return weight;)
+            }
+           ```
+        * これがクラスでり、主に概要を表したもの(人間は身長と体重を持っている)。これに対して以下のコードがあった時に
+        ```
+            Human sato = new Human(170, 60);
+        ```
+        * satoがオブジェクトでnew Human()がインスタンス化である。
+        *  */
     }
 
     private void saveBuyingHistory(TicketBooth booth, Ticket ticket) {
