@@ -117,9 +117,9 @@ public class Step07ExceptionTest extends PlainTestCase {
             Throwable cause = e.getCause();
             sea = cause.getMessage();
             land = cause.getClass().getSimpleName();
-            log(sea); // your answer? => 
-            log(land); // your answer? => 
-            log(e); // your answer? => 
+            log(sea); // your answer? => mystic
+            log(land); // your answer? => oneman
+            log(e); // your answer? => java.lang.NumberFormatException
         }
     }
 
