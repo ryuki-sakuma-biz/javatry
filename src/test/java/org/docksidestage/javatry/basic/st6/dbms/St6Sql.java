@@ -13,9 +13,15 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.javatry.basic.st6.dbms;
 
 /**
- * @author jflute
+ * @author ryuki sakuma
  */
-public class St6PostgreSql extends  St6Sql { }
+package org.docksidestage.javatry.basic.st6.dbms;
+
+public class St6Sql {
+    public String buildPagingQuery(int pageSize, int pageNumber) {
+        int offset = pageSize * (pageNumber - 1);
+        return "limit " + offset + ", " + pageSize;
+    }
+}
