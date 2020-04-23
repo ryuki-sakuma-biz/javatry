@@ -16,7 +16,7 @@
 package org.docksidestage.bizfw.di.nondi.factory;
 
 import org.docksidestage.bizfw.basic.objanimal.Animal;
-import org.docksidestage.bizfw.basic.objanimal.Cat;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Cat;
 import org.docksidestage.bizfw.di.cast.TooLazyDog;
 
 /**

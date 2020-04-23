@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.docksidestage.bizfw.basic.objanimal.Dog;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Dog;
 import org.docksidestage.bizfw.di.container.component.DiContainerModule;
 import org.docksidestage.bizfw.di.container.component.SimpleInject;
 import org.docksidestage.bizfw.exception.ExceptionMessageBuilder;

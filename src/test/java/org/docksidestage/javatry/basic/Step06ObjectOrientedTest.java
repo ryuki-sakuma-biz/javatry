@@ -20,8 +20,8 @@ import org.docksidestage.bizfw.basic.buyticket.Ticket;
 import org.docksidestage.bizfw.basic.buyticket.TicketBooth;
 import org.docksidestage.bizfw.basic.objanimal.Animal;
 import org.docksidestage.bizfw.basic.objanimal.BarkedSound;
-import org.docksidestage.bizfw.basic.objanimal.Cat;
-import org.docksidestage.bizfw.basic.objanimal.Dog;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Cat;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Dog;
 import org.docksidestage.bizfw.basic.objanimal.notrunner.Zombie;
 import org.docksidestage.bizfw.basic.objanimal.loud.AlarmClock;
 import org.docksidestage.bizfw.basic.objanimal.loud.Loudable;
@@ -346,6 +346,19 @@ public class Step06ObjectOrientedTest extends PlainTestCase {
      */
     public void test_objectOriented_polymorphism_makeInterface() {
         // your confirmation code here
+        Animal dog = new Dog();
+        BarkedSound dogSound = dog.bark();
+        String dogSea = dogSound.getBarkWord();
+        log(dogSea);
+        int dogLand = dog.getHitPoint();
+        log(dogLand);
+
+        Animal cat = new Cat();
+        BarkedSound catSound = cat.bark();
+        String catSea = catSound.getBarkWord();
+        log(catSea);
+        int catLand = cat.getHitPoint();
+        log(catLand);
     }
 
     // ===================================================================================

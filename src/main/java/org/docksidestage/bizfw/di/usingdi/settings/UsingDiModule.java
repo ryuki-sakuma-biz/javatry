@@ -18,7 +18,7 @@ package org.docksidestage.bizfw.di.usingdi.settings;
 import java.util.Map;
 
 import org.docksidestage.bizfw.basic.objanimal.Animal;
-import org.docksidestage.bizfw.basic.objanimal.Cat;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Cat;
 import org.docksidestage.bizfw.basic.supercar.SupercarDealer;
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer;
 import org.docksidestage.bizfw.di.cast.TooLazyDog;

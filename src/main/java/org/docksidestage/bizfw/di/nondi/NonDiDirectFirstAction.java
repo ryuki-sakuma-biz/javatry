@@ -15,7 +15,7 @@
  */
 package org.docksidestage.bizfw.di.nondi;
 
-import org.docksidestage.bizfw.basic.objanimal.Dog;
+import org.docksidestage.bizfw.basic.objanimal.runner.fastrunner.Dog;
 import org.docksidestage.bizfw.basic.supercar.SupercarDealer;
 import org.docksidestage.bizfw.basic.supercar.SupercarManufacturer.Supercar;
 import org.slf4j.Logger;
