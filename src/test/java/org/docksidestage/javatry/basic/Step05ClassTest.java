@@ -136,7 +136,8 @@ public class Step05ClassTest extends PlainTestCase {
     public void test_class_moreFix_return_ticket() {
         // comment out after modifying the method
         TicketBooth booth = new TicketBooth();
-        Ticket oneDayPassport = booth.buyOneDayPassport(10000);
+        TicketBuyResult result = booth.buyOneDayPassport(10000);
+        Ticket oneDayPassport = result.getTicket();
         log(oneDayPassport.getDisplayPrice()); // should be same as one-day price
         log(oneDayPassport.isAlreadyIn()); // should be false
         oneDayPassport.doInPark();
@@ -222,7 +223,9 @@ public class Step05ClassTest extends PlainTestCase {
         // write confirmation code here
         int handMoney = 50000;
         TicketBooth booth = new TicketBooth();
-        Ticket oneDayPassport = booth.buyOneDayPassport(handMoney);
+        TicketBuyResult ticketBuyResultOfOneDayPassport = booth.buyOneDayPassport(handMoney);
+        Ticket oneDayPassport = ticketBuyResultOfOneDayPassport.getTicket();
+        handMoney = ticketBuyResultOfOneDayPassport.getChange();
         handMoney -= oneDayPassport.getDisplayPrice();
         log("hand money : " + handMoney + ", ticket class : " + oneDayPassport.getClass().getName());
         TicketBuyResult ticketBuyResultOfTwoDayPassport = booth.buyTwoDayPassport(handMoney);
