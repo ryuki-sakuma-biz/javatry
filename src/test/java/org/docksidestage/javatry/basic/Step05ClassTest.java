@@ -158,6 +158,7 @@ public class Step05ClassTest extends PlainTestCase {
         log("display price : " + twoDayPassport.getDisplayPrice()+ " change:" + change); // should be same as money
     }
 
+    // TODO sakuma テストメソッドに引数を追加すると、テストメソッドとして認識されなくなってしまいます (JUnitというツールの規約なのでしょうがない) by jflute (2020/04/23)
     /**
      * Now you cannot judge ticket type "one-day or two-day?", so add method to judge it. <br>
      * (チケットをもらってもOneDayなのかTwoDayなのか区別が付きません。区別を付けられるメソッドを追加しましょう)

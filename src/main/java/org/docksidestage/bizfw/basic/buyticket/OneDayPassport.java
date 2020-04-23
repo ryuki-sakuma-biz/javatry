@@ -1,5 +1,6 @@
 package org.docksidestage.bizfw.basic.buyticket;
 
+// TODO sakuma javadoc please by jflute (2020/04/23)
 public class OneDayPassport implements Ticket {
     private final int displayPrice;
     private boolean alreadyIn;
