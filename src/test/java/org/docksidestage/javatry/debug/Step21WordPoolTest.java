@@ -53,8 +53,7 @@ public class Step21WordPoolTest extends PlainTestCase {
         WordPool pool = new WordPool();
 
         // act
-        Map.Entry<Long, Word> actual = pool.create(new Language("日本語"), "財布");
-
+        Map.Entry<Long, Word> actual = pool.create(new Language("日本語", 1, 13), "財布");
         // assert
         assertTrue(pool.getWords().contains(actual.getValue()));
     }
@@ -64,7 +63,7 @@ public class Step21WordPoolTest extends PlainTestCase {
         WordPool pool = new WordPool();
         List<String> words = Arrays.asList("私", "柿", "荼", "昂");
 
-        for (int i = 0; i < words.size(); i++) {
+        for (int i = 0; i < words.size() - 1; i++) {
             // act
             Long actual = pool.findId(words.get(i));
 

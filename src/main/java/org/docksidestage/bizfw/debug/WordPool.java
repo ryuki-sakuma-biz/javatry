@@ -38,7 +38,7 @@ public class WordPool {
     }
 
     public Word find(Long id) {
-        return wordMap.remove(id);
+        return wordMap.get(id);
     }
 
     public Word update(Long id, Word word) {
@@ -56,9 +56,9 @@ public class WordPool {
     }
 
     public Word update(String language, String word1, String word2) {
-        Long id = findId(word2);
+        Long id = findId(word1);
         wordMap.remove(id);
-        wordMap.put(id, new Word(new Language(language), word1));
+        wordMap.put(id, new Word(new Language(language), word2));
         return wordMap.get(id);
     }
 

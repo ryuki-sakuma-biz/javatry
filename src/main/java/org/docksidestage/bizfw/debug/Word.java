@@ -28,4 +28,9 @@ public class Word {
             return true;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Word{" + "language=" + language + ", word='" + word + '\'' + '}';
+    }
 }
