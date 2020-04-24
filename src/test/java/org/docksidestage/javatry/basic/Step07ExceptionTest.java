@@ -164,9 +164,12 @@ public class Step07ExceptionTest extends PlainTestCase {
             // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
             // What happens? Write situation and cause here. (何が起きた？状況と原因をここに書いてみましょう)
             // - - - - - - - - - -
-            // buSupercarから遡ってSupercarClient → SupercarDeale → SupercarManufacturer → SupercarSteeringWheelManufacturer → SpecialScrewManufacturerのthrow new SpecialScrewCannotMakeBySpecException(msg)で例外処理を発生させている。
-            //
-            //
+            // this new SupercarClient().buySupercar();で発生
+            // SupercarClient Supercar orderedCustomCar = dealer.orderSupercar(clientRequirement);で発生
+            // SupercarDealer return manufacturer.makeSupercar("piari")で発生
+            // SupercarManufacturer SteeringWheel steeringWheel = manufacturer.makeSteeringWheel(steeringWheelId)で発生
+            // SupercarSteeringWheelManufacturer SpecialScrew screw = manufacturer.makeSpecialScrew(screwSpec)で発生
+            // SpecialScrewManufacturer throw new SpecialScrewCannotMakeBySpecException(msg)で発生
             // _/_/_/_/_/_/_/_/_/_/
         }
     }
