@@ -63,7 +63,11 @@ public class WordPool {
     }
 
     public String replace(Long id, String word1, String word2) {
-        return wordMap.get(id).getWord().replace(word1, word2);
+        Word getWord = wordMap.get(id);
+        Word replacedWord = new Word(new Language(getWord.getLanguage().getName()), getWord.getWord().replace(word1, word2));
+        wordMap.remove(id);
+        wordMap.put(id, replacedWord);
+        return replacedWord.getWord();
     }
 
     public void delete(Long id) {
