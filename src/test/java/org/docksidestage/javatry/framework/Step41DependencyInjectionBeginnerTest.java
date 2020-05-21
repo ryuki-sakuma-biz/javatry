@@ -15,6 +15,8 @@
  */
 package org.docksidestage.javatry.framework;
 
+import org.docksidestage.bizfw.di.nondi.NonDiDirectFirstAction;
+import org.docksidestage.bizfw.di.nondi.NonDiDirectSecondAction;
 import org.docksidestage.unit.PlainTestCase;
 
 /**
@@ -36,9 +38,13 @@ public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
         // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         // What is Dependency Injection?
         // - - - - - (your answer?)
-        //
-        //
-        //
+        // プラグラムにおいて、クラスとクラスの依存関係を少なくした設計パターンである。
+        // プログラム内で使用したクラス(クラスA)において、クラスとa同じ入出力をもちパフォーマンスのよいクラスBを作成したとする。
+        // するとクラスAを使用して実装した箇所全てをクラスBに書き換える必要がある。
+        // この方法で開発を進めていくと、開発プログラムの量が大きくなったときにクラスAを使用した箇所を全て網羅できずにリファクタできなかったり、リファクタの際にどこにリファクタすればいいのかの考慮など多くの工数を費やしてしまう。
+        // これを改善するためにDIという設計パターンがある。
+        // インターフェースAを元にクラスAを実装することで、クラスAを使いたい時はインターフェスAを使用する。
+        // このようにすることでインターフェースAを引き継いだクラスAよりも高性能なクラスBを定義した時に、実装側でクラスAからクラスBに切り替える必要がなく開発コストを下げることができる。
         // _/_/_/_/_/_/_/_/_/_/
     }
 
@@ -50,8 +56,29 @@ public class Step41DependencyInjectionBeginnerTest extends PlainTestCase {
      * (NonDiDirectFirstAction と NonDiDirectSecondAction の違いは？)
      */
     public void test_nondi_difference_between_first_and_second() {
-        // your answer? => 
+        // your answer? => NonDiDirectFirstActionではDogクラスを使用していて、NonDiDirectSecondActionではDogクラスを継承したTooLazyDogクラスが使用されている
+        // callFriend()とwakeupMe()において、DogクラスにおけるbarkはDog自身がAnimalクラスからbarkを呼び出しているのに対し、TooLazyDogクラスはAnimalsクラスを継承しているCatクラスからbark()を呼び出している
+        //
         // and your confirmation code here freely
+
+        NonDiDirectFirstAction nonDiDirectFirstAction = new NonDiDirectFirstAction();
+        NonDiDirectSecondAction nonDiDirectSecondAction = new NonDiDirectSecondAction();
+
+        log("call Friend");
+        nonDiDirectFirstAction.callFriend();
+        nonDiDirectSecondAction.callFriend();
+
+        log("wakeupMe");
+        nonDiDirectFirstAction.wakeupMe();
+        nonDiDirectSecondAction.wakeupMe();
+
+        log("goToOffice");
+        nonDiDirectFirstAction.goToOffice();
+        nonDiDirectSecondAction.goToOffice();
+
+        log("sendGift");
+        nonDiDirectFirstAction.sendGift();
+        nonDiDirectSecondAction.sendGift();
     }
 
     /**
