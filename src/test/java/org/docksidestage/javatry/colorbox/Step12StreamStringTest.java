@@ -71,6 +71,25 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長いものと短いものの差は何文字？)
      */
     public void test_length_findMaxMinDiff() {
+        List<ColorBox> colorBoxList = new YourPrivateRoom().getColorBoxList();
+
+        String longestContent = colorBoxList.stream()
+                .flatMap(colorBox -> colorBox.getSpaceList().stream())
+                .map(BoxSpace::getContent)
+                .filter(content -> content instanceof String)
+                .map(Object::toString)
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+
+        String shortestContent = colorBoxList.stream()
+                .flatMap(colorBox -> colorBox.getSpaceList().stream())
+                .map(BoxSpace::getContent)
+                .filter(content -> content instanceof String)
+                .map(Object::toString)
+                .min(Comparator.comparingInt(String::length))
+                .orElse("");
+
+        log(longestContent.length() - shortestContent.length());
     }
 
     // has small #adjustmemts from ClassicStringTest
@@ -80,6 +99,7 @@ public class Step12StreamStringTest extends PlainTestCase {
      * (カラーボックスに入ってる値 (文字列以外はtoString()) の中で、二番目に長い文字列は？ (Streamでのソートありで))
      */
     public void test_length_findSecondMax() {
+
     }
 
     /**
