@@ -16,9 +16,11 @@
 package org.docksidestage.javatry.colorbox;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.docksidestage.bizfw.colorbox.ColorBox;
 import org.docksidestage.bizfw.colorbox.color.BoxColor;
+import org.docksidestage.bizfw.colorbox.space.BoxSpace;
 import org.docksidestage.bizfw.colorbox.yours.YourPrivateRoom;
 import org.docksidestage.unit.PlainTestCase;
 
@@ -60,6 +62,23 @@ public class Step11ClassicStringTest extends PlainTestCase {
      * (カラーボックスに入ってる文字列の中で、一番長い文字列は？)
      */
     public void test_length_findMax() {
+        List<ColorBox>  colorBoxes = new YourPrivateRoom().getColorBoxList();
+        String longestString = "";
+        for (ColorBox colorBox: colorBoxes) {
+            colorBox.getSpaceList();
+            for (BoxSpace boxSpace: colorBox.getSpaceList()) {
+                Object content = boxSpace.getContent();
+                if (content instanceof String) {
+                    String stringContent = content.toString();
+                    System.out.println(stringContent);
+                    if (longestString.length() <= stringContent.length()) {
+                        longestString = stringContent;
+                    }
+                }
+            }
+        }
+
+        System.out.println(longestString);
     }
 
     /**
